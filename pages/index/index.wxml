@@ -1,0 +1,45 @@
+<!-- index.wxml -->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+      获取授权
+    </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="user-eat " hover-class="eat-hover"></view>
+  <!-- <view class="user-setting">
+    <text>设置</text>
+  </view> -->
+  <view class="food-icon food-icon-1"></view>
+  <view class="food-icon food-icon-2"></view>
+  <view class="food-icon food-icon-3"></view>
+  <view class="food-icon food-icon-4"></view>
+  <view class="food-icon food-icon-5"></view>
+  <view class="food-icon food-icon-6"></view>
+  <view class="userlist">
+    <ul class="userlist-container">
+      <li>
+        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      </li>
+    </ul>
+  </view>
+</view>
