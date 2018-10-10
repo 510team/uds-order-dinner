@@ -13,7 +13,22 @@ const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
+const removeStorage = key => {
+  wx.removeStorage({
+    key: key,
+    success: function (res) {
+      console.log(key + "缓存已被清理");
+    }
+  });
+};
+const goBackIndex = () => {
+  removeStorage("code");
+  wx.reLaunch({
+    url: "../index/index"
+  });
+};
 
 module.exports = {
-  formatTime: formatTime
+  formatTime,
+  goBackIndex
 }
