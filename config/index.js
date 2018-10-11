@@ -1,5 +1,5 @@
-//const serverHost = "https://www.adazhang.com";
-const serverHost = "http://localhost:8666";
+const serverHost = "https://app.adazhang.com";
+//const serverHost = "http://localhost:8666";
 
 const Login = {
   url: `${serverHost}/login`,

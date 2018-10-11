@@ -29,9 +29,7 @@ Page({
       withShareTicket: true
     });
 
-    this.canEat();
-    //this.eat();
-    this.fetchEatList();
+
 
     //检查code
     wx.getStorage({
@@ -40,12 +38,15 @@ Page({
         wx.checkSession({
           success: res => {
             console.log("Session未过期，登陆状态未失效");
+            this.canEat();
+            this.fetchEatList();
           },
           fail: err => {
             // 重新登录
             console.log("Session过期，重新登录");
             loginAction().then(() => {
-
+              this.canEat();
+              this.fetchEatList();
             });
           }
         });
@@ -53,6 +54,8 @@ Page({
       fail: res => {
         console.log("无code信息，调用登录接口获取code");
         loginAction().then(res => {
+          this.canEat();
+          this.fetchEatList();
         });
       }
     });
@@ -99,4 +102,20 @@ Page({
       });
     });
   },
+  onShareAppMessage(options) {
+    if (options.from === "button") {
+      console.log(options.target);
+    }
+    return {
+      title: "今晚吃点啥？",
+      path: "pages/index/index",
+      imageUrl: "../../assets/img/logo.png",
+      success: function (res) {
+        console.log("res", res);
+      },
+      fail: function (res) {
+        console.log("转发到群失败");
+      }
+    };
+  }
 })
