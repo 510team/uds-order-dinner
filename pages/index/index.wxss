@@ -29,6 +29,11 @@
   background: url('https://cdn.adazhang.com/uds-order-dinner/eat.png') no-repeat  center;
   background-size:244rpx 79rpx;
 } 
+.user-uneat{
+  -webkit-filter: grayscale(1); /* Webkit */
+  filter: gray; /* IE6-9 */  
+  filter: grayscale(1); /* W3C */
+}
 .eat-hover{
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
   transform: translate(4px, 4px);

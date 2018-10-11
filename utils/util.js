@@ -27,8 +27,15 @@ const goBackIndex = () => {
     url: "../index/index"
   });
 };
-
+const showToast = (title, icon = "none", duration = 500) => {
+  wx.showToast({
+    title: title,
+    icon: icon,
+    duration: duration
+  });
+};
 module.exports = {
   formatTime,
-  goBackIndex
+  goBackIndex,
+  showToast
 }

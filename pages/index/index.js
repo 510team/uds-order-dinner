@@ -10,14 +10,17 @@ import {
   setUserRequest
 } from "../../services/login.js";
 
+import { showToast } from "../../utils/util.js";
 import {
   eatRequest,
   canEatRequest,
+  eatPeoplesRequest
 } from "../../services/eat.js";
 Page({
   data: {
-    motto: 'Hello World',
+    isCanEat: false,
     userInfo: {},
+    list: [],
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
@@ -27,8 +30,8 @@ Page({
     });
 
     this.canEat();
-    this.eat();
-
+    //this.eat();
+    this.fetchEatList();
 
     //检查code
     wx.getStorage({
@@ -70,12 +73,30 @@ Page({
   },
   canEat() {
     canEatRequest().then(res => {
-      console.log('res', res);
+      this.setData({
+        isCanEat: res.data.can_eat
+      });
     });
   },
-  eat() {
-    eatRequest().then(res => {
-      console.log('res', res);
+  fetchEatList() {
+    eatPeoplesRequest().then(res => {
+      console.log(res);
+      this.setData({
+        list: res.data.list
+      });
     });
-  }
+  },
+  onEat() {
+    eatRequest().then(res => {
+      if (res.data.can_eat) {
+        showToast("成功取消");
+      } else {
+        showToast("成功订餐！！");
+      }
+      this.fetchEatList();
+      this.setData({
+        isCanEat: res.data.can_eat
+      });
+    });
+  },
 })

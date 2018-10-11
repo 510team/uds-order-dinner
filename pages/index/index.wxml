@@ -9,10 +9,7 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-  <view class="user-eat " hover-class="eat-hover"></view>
-  <!-- <view class="user-setting">
-    <text>设置</text>
-  </view> -->
+  <view class="user-eat {{isCanEat?'':'user-uneat'}}" bindtap="onEat" hover-class="eat-hover"></view>
   <view class="food-icon food-icon-1"></view>
   <view class="food-icon food-icon-2"></view>
   <view class="food-icon food-icon-3"></view>
@@ -22,23 +19,9 @@
   <view class="userlist">
     <ul class="userlist-container">
       <li>
-        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <image class="userlist-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <block wx:for="{{list}}" wx:for-index="idx" wx:for-item="item">
+          <image class="userlist-avatar" src="{{item.avatar_url}}" mode="cover"></image>
+        </block>
       </li>
     </ul>
   </view>

@@ -26,6 +26,11 @@ const Eat = {
   method: "post"
 };
 
+const EatPeopleList = {
+  url: `${serverHost}/eat/people`,
+  method: "post"
+};
+
 
 export {
   serverHost,
@@ -33,5 +38,6 @@ export {
   Login,
   SaveUserInfo,
   CanEat,
-  Eat
+  Eat,
+  EatPeopleList
 };

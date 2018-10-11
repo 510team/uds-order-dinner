@@ -1,8 +1,7 @@
-import { Eat, CanEat } from "../config/index.js";
+import { Eat, CanEat, EatPeopleList } from "../config/index.js";
 import httpRequest from "../utils/request.js";
 
 
-//发送findUser Request
 const eatRequest = () => {
     return httpRequest({
         method: Eat.method,
@@ -11,7 +10,6 @@ const eatRequest = () => {
     });
 };
 
-//发送findUser Request
 const canEatRequest = () => {
     return httpRequest({
         method: CanEat.method,
@@ -19,7 +17,16 @@ const canEatRequest = () => {
         url: CanEat.url
     });
 };
+
+const eatPeoplesRequest = () => {
+    return httpRequest({
+        method: EatPeopleList.method,
+        data: {},
+        url: EatPeopleList.url
+    });
+};
 export {
     eatRequest,
-    canEatRequest
+    canEatRequest,
+    eatPeoplesRequest
 };
