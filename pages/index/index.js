@@ -9,6 +9,11 @@ import {
   loginRequest,
   setUserRequest
 } from "../../services/login.js";
+
+import {
+  eatRequest,
+  canEatRequest,
+} from "../../services/eat.js";
 Page({
   data: {
     motto: 'Hello World',
@@ -20,6 +25,11 @@ Page({
     wx.showShareMenu({
       withShareTicket: true
     });
+
+    this.canEat();
+    this.eat();
+
+
     //检查code
     wx.getStorage({
       key: "code",
@@ -58,8 +68,14 @@ Page({
       })
       .then(res => setUserRequest(res.rawData, res.signature));
   },
-  getUserInfo: function (e) {
-
-
+  canEat() {
+    canEatRequest().then(res => {
+      console.log('res', res);
+    });
+  },
+  eat() {
+    eatRequest().then(res => {
+      console.log('res', res);
+    });
   }
 })

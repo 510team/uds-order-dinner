@@ -1,5 +1,5 @@
-const serverHost = "https://www.adazhang.com";
-// const serverHost = "http://localhost:8362";
+//const serverHost = "https://www.adazhang.com";
+const serverHost = "http://localhost:8666";
 
 const Login = {
   url: `${serverHost}/login`,
@@ -16,6 +16,15 @@ const SaveUserInfo = {
   method: "post"
 };
 
+const CanEat = {
+  url: `${serverHost}/eat/canEat`,
+  method: "post"
+};
+
+const Eat = {
+  url: `${serverHost}/eat`,
+  method: "post"
+};
 
 
 export {
@@ -23,4 +32,6 @@ export {
   FindUser,
   Login,
   SaveUserInfo,
+  CanEat,
+  Eat
 };
