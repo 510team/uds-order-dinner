@@ -1,107 +1,125 @@
 /**index.wxss**/
 .userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-  border :2px solid #C33522;
+    width: 128rpx;
+    height: 128rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+    border: 2px solid #c33522;
 }
 
 .userinfo-nickname {
-  color: #C33522;
-  font-size:15px;
+    color: #c33522;
+    font-size: 15px;
 }
-
+.user-plus {
+    position: fixed;
+    top: 120px;
+    width: 80rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    background: #000;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    display: none;
+}
+.end {
+    /* opacity: 0; */
+}
+.start {
+    display: block;
+    /*不透明*/
+}
 .user-eat {
-  border:2px solid #C33522;
-  padding:5rpx;
-  border-radius:10rpx;
-  margin-top:150rpx;
-  width: 264rpx;
-  height: 99rpx;
-  overflow: hidden; 
-  background: url('https://cdn.adazhang.com/uds-order-dinner/eat.png') no-repeat  center;
-  background-size:244rpx 79rpx;
-} 
-.user-uneat{
-  -webkit-filter: grayscale(1); /* Webkit */
-  filter: gray; /* IE6-9 */  
-  filter: grayscale(1); /* W3C */
+    border: 2px solid #c33522;
+    padding: 5rpx;
+    border-radius: 10rpx;
+    margin-top: 150rpx;
+    width: 264rpx;
+    height: 99rpx;
+    overflow: hidden;
+    background: url("https://cdn.adazhang.com/uds-order-dinner/eat.png")
+        no-repeat center;
+    background-size: 244rpx 79rpx;
 }
-.eat-hover{
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-  transform: translate(4px, 4px);
+.user-uneat {
+    -webkit-filter: grayscale(1); /* Webkit */
+    filter: gray; /* IE6-9 */
+    filter: grayscale(1); /* W3C */
 }
-.userlist{
-  width:100%;
-  padding:30rpx;
-  margin-top:90rpx;
-  line-height: 0;
+.eat-hover {
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    transform: translate(4px, 4px);
 }
-.userlist-container{
-  display: flex;
-  flex-direction: row;
-  align-items: left; 
-  width:100%;
+.userlist {
+    width: 100%;
+    padding: 30rpx;
+    margin-top: 90rpx;
+    line-height: 0;
 }
-.userlist-avatar{
-  width:60rpx;
-  height:60rpx;
-  margin:0 5rpx;
-  border-radius:100%;
+.userlist-container {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    width: 100%;
+}
+.userlist-avatar {
+    width: 60rpx;
+    height: 60rpx;
+    margin: 0 5rpx;
+    border-radius: 100%;
 }
 
-.food-icon{
-  width: 128px;
-  height: 114px;
-  overflow: hidden; 
-  background: url('https://cdn.adazhang.com/uds-order-dinner/food.png') 0 0 no-repeat ;
-  background-size:256px 342px;
+.food-icon {
+    width: 128px;
+    height: 114px;
+    overflow: hidden;
+    background: url("https://cdn.adazhang.com/uds-order-dinner/food.png") 0 0
+        no-repeat;
+    background-size: 256px 342px;
 }
-.food-icon-1{
-  background-position: 0 0;
-  transform: rotate(150deg);
-  position: fixed;
-  left:5rpx;
-  top:0;
-  
+.food-icon-1 {
+    background-position: 0 0;
+    transform: rotate(150deg);
+    position: fixed;
+    left: 5rpx;
+    top: 0;
 }
-.food-icon-2{
-  background-position: -128px 0;
-  position: fixed;
-  left:100rpx;
-  top:220rpx;
+.food-icon-2 {
+    background-position: -128px 0;
+    position: fixed;
+    left: 100rpx;
+    top: 220rpx;
 }
-.food-icon-3{
-  background-position: 0 -200px;
-  transform: rotate(80deg);
-  position: fixed;
-  left:10rpx;
-  bottom:100rpx;
-  
+.food-icon-3 {
+    background-position: 0 -200px;
+    transform: rotate(80deg);
+    position: fixed;
+    left: 10rpx;
+    bottom: 100rpx;
 }
-.food-icon-4{
-  background-position: 0 -100px;
- 
-  position: fixed;
-  right:0;
-  top:50rpx;
+.food-icon-4 {
+    background-position: 0 -100px;
+
+    position: fixed;
+    right: 0;
+    top: 50rpx;
 }
-.food-icon-5{
-  background-position: -128px -114px;
-  position: fixed;
-  right:0;
-  top:450rpx;
+.food-icon-5 {
+    background-position: -128px -114px;
+    position: fixed;
+    right: 0;
+    top: 450rpx;
 }
-.food-icon-6{
-  background-position: -128px -228px;
-  position: fixed;
-  right:150rpx;
-  bottom:130rpx;
+.food-icon-6 {
+    background-position: -128px -228px;
+    position: fixed;
+    right: 150rpx;
+    bottom: 130rpx;
 }

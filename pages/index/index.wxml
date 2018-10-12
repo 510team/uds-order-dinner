@@ -9,6 +9,7 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
+  <view class="user-plus {{isAnimation?'start':''}}" animation="{{animationData}}">+1</view>
   <view class="user-eat {{isCanEat?'':'user-uneat'}}" bindtap="onEat" hover-class="eat-hover"></view>
   <view class="food-icon food-icon-1"></view>
   <view class="food-icon food-icon-2"></view>

@@ -1,6 +1,6 @@
 import { goBackIndex } from "./util";
 const httpRequest = data => {
-    return new Promise(function (resolve, reject) {
+    return new Promise(function(resolve, reject) {
         console.log("http request", data.url);
         let code = "";
         wx.getStorage({
@@ -17,7 +17,7 @@ const httpRequest = data => {
                         code: code,
                         "content-type": "application/x-www-form-urlencoded" // 默认值
                     },
-                    success: function (res) {
+                    success: function(res) {
                         if (res.data.success) {
                             resolve(res.data);
                         } else {
@@ -28,7 +28,7 @@ const httpRequest = data => {
                             reject(res.data);
                         }
                     },
-                    fail: function (res) {
+                    fail: function(res) {
                         console.log(JSON.stringify(res));
                         if (res.data.errorCode == 100) {
                             // goBackIndex();

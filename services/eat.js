@@ -1,7 +1,6 @@
 import { Eat, CanEat, EatPeopleList } from "../config/index.js";
 import httpRequest from "../utils/request.js";
 
-
 const eatRequest = () => {
     return httpRequest({
         method: Eat.method,
@@ -25,8 +24,4 @@ const eatPeoplesRequest = () => {
         url: EatPeopleList.url
     });
 };
-export {
-    eatRequest,
-    canEatRequest,
-    eatPeoplesRequest
-};
+export { eatRequest, canEatRequest, eatPeoplesRequest };
