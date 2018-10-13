@@ -1,7 +1,7 @@
 <!-- index.wxml -->
 <view class="container">
   <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" class="user-authorize" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
       获取授权
     </button>
     <block wx:else>
@@ -9,21 +9,24 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-  <view class="user-plus {{isAnimation?'start':''}}" animation="{{animationData}}">+1</view>
-  <view class="user-eat {{isCanEat?'':'user-uneat'}}" bindtap="onEat" hover-class="eat-hover"></view>
+  <block wx:if="{{hasUserInfo}}" class="userinfo-container">
+    <view class="user-plus {{isAnimation?'start':''}}" animation="{{animationData}}">+1</view>
+    <view class="user-eat {{isCanEat?'':'user-uneat'}}" bindtap="onEat" hover-class="eat-hover"></view>
+    <view class="userlist">
+      <ul class="userlist-container">
+        <li>
+          <block wx:for="{{list}}" wx:for-index="idx" wx:for-item="item" wx:key="idx">
+            <image class="userlist-avatar" src="{{item.avatar_url}}" mode="cover"></image>
+          </block>
+        </li>
+      </ul>
+    </view>
+    <view class="user-summary">共计{{list.length}}人</view>
+  </block>
   <view class="food-icon food-icon-1"></view>
   <view class="food-icon food-icon-2"></view>
   <view class="food-icon food-icon-3"></view>
   <view class="food-icon food-icon-4"></view>
   <view class="food-icon food-icon-5"></view>
   <view class="food-icon food-icon-6"></view>
-  <view class="userlist">
-    <ul class="userlist-container">
-      <li>
-        <block wx:for="{{list}}" wx:for-index="idx" wx:for-item="item">
-          <image class="userlist-avatar" src="{{item.avatar_url}}" mode="cover"></image>
-        </block>
-      </li>
-    </ul>
-  </view>
 </view>

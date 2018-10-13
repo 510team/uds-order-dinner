@@ -4,6 +4,9 @@
     flex-direction: column;
     align-items: center;
 }
+.user-authorize {
+    margin-top: 200rpx;
+}
 
 .userinfo-avatar {
     width: 128rpx;
@@ -84,6 +87,13 @@
         no-repeat;
     background-size: 256px 342px;
 }
+
+.user-summary {
+    font-size: 14px;
+    width: 100%;
+    padding: 50rpx;
+}
+
 .food-icon-1 {
     background-position: 0 0;
     transform: rotate(150deg);

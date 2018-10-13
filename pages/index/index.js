@@ -160,5 +160,18 @@ Page({
                 console.log("转发到群失败");
             }
         };
+    },
+    getUserInfo(e) {
+        if (e.detail.userInfo) {
+            this.setData({
+                userInfo: e.detail.userInfo,
+                hasUserInfo: true
+            });
+            wx.setStorage({
+                key: "hasUserInfo",
+                data: e.detail.userInfo
+            });
+            setUserRequest(e.detail.rawData, e.detail.signature);
+        }
     }
 });
